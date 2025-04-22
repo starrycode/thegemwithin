@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -13,6 +13,84 @@
     <button id="next-btn">Next</button>
     <div id="result" class="hidden"></div>
   </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gem Within 💎</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #5d3fd3;
+    }
+    .question-container {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .option {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #fafafa;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    label {
+      cursor: pointer;
+      font-size: 16px;
+    }
+    input[type="radio"]:checked + label {
+      background-color: #d1c4e9;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    #next-btn {
+      background-color: #5d3fd3;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      display: block;
+      margin: 20px auto;
+    }
+    #next-btn:hover {
+      background-color: #4a2eb0;
+    }
+    #result-container {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Find Out The Gem Within You 💎</h1>
+  <div id="question-container" class="question-container"></div>
+  <button id="next-btn">Next</button>
+  <div id="result-container"></div>
 
   <script src="script.js"></script>
 </body>
