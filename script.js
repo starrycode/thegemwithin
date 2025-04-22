@@ -143,56 +143,107 @@ const questions = [
   }
 ];
 
-// Store the user's responses
-let userResponses = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+// // Store the user's responses
+// let userResponses = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
-// Function to display a question and options
-function displayQuestion(questionIndex) {
-  const questionData = questions[questionIndex];
-  let questionHTML = `<h3>${questionData.question}</h3>`;
+// // Function to display a question and options
+// function displayQuestion(questionIndex) {
+//   const questionData = questions[questionIndex];
+//   let questionHTML = `<h3>${questionData.question}</h3>`;
   
-  questionData.options.forEach((option, index) => {
-    questionHTML += `
+//   questionData.options.forEach((option, index) => {
+//     questionHTML += `
+//       <div class="option">
+//         <input type="radio" name="question${questionIndex}" id="option${questionIndex}_${index}" value="${option.dimension}" onclick="trackAnswer('${option.dimension}')">
+//         <label for="option${questionIndex}_${index}">${option.text}</label>
+//       </div>
+//     `;
+//   });
+
+//   document.getElementById('question-container').innerHTML = questionHTML;
+// }
+
+// // Function to track answers
+// function trackAnswer(dimension) {
+//   userResponses[dimension]++;
+// }
+
+// // Function to calculate and display results
+// function showResults() {
+//   let result = "";
+//   const sortedResponses = Object.entries(userResponses).sort((a, b) => b[1] - a[1]);
+
+//   sortedResponses.forEach(([dimension, score]) => {
+//     result += `<p>${dimension}: ${score}</p>`;
+//   });
+
+//   document.getElementById('result-container').innerHTML = result;
+// }
+
+// // Start the quiz by showing the first question
+// let currentQuestion = 0;
+// function nextQuestion() {
+//   if (currentQuestion < questions.length) {
+//     displayQuestion(currentQuestion);
+//     currentQuestion++;
+//   } else {
+//     showResults();
+//   }
+// }
+
+// // Add a "Next" button that will call the next question function
+// document.getElementById('next-btn').addEventListener('click', nextQuestion);
+
+// // Initial call to start the quiz
+// nextQuestion();
+
+
+// Render the first question
+let currentQuestionIndex = 0;
+const questionContainer = document.getElementById("question-container");
+const nextButton = document.getElementById("next-btn");
+
+function renderQuestion() {
+  const question = questions[currentQuestionIndex];
+  questionContainer.innerHTML = `
+    <h2>${question.question}</h2>
+    ${question.options.map((option, index) => `
       <div class="option">
-        <input type="radio" name="question${questionIndex}" id="option${questionIndex}_${index}" value="${option.dimension}" onclick="trackAnswer('${option.dimension}')">
-        <label for="option${questionIndex}_${index}">${option.text}</label>
+        <input type="radio" id="option${index}" name="question${currentQuestionIndex}" value="${option.type}">
+        <label for="option${index}">${option.text}</label>
       </div>
-    `;
+    `).join('')}
+  `;
+
+  // Disable the "Next" button initially
+  nextButton.disabled = true;
+
+  // Enable the "Next" button when a choice is made
+  const radioButtons = questionContainer.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+      nextButton.disabled = false;
+    });
   });
-
-  document.getElementById('question-container').innerHTML = questionHTML;
 }
 
-// Function to track answers
-function trackAnswer(dimension) {
-  userResponses[dimension]++;
-}
+// Load the first question
+renderQuestion();
 
-// Function to calculate and display results
-function showResults() {
-  let result = "";
-  const sortedResponses = Object.entries(userResponses).sort((a, b) => b[1] - a[1]);
-
-  sortedResponses.forEach(([dimension, score]) => {
-    result += `<p>${dimension}: ${score}</p>`;
-  });
-
-  document.getElementById('result-container').innerHTML = result;
-}
-
-// Start the quiz by showing the first question
-let currentQuestion = 0;
-function nextQuestion() {
-  if (currentQuestion < questions.length) {
-    displayQuestion(currentQuestion);
-    currentQuestion++;
+// Handle the "Next" button click
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    renderQuestion();
   } else {
     showResults();
   }
+});
+
+// Show the results after all questions
+function showResults() {
+  questionContainer.innerHTML = "<h2>Results</h2>";
+  // Display the result logic here
+  // For now, you can display a placeholder message
+  questionContainer.innerHTML += "<p>Your results will appear here!</p>";
 }
-
-// Add a "Next" button that will call the next question function
-document.getElementById('next-btn').addEventListener('click', nextQuestion);
-
-// Initial call to start the quiz
-nextQuestion();
