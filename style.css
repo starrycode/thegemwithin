@@ -1,180 +1,33 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #fdf5f8;
-    color: #333;
-    margin: 0;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .quiz-container {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    max-width: 500px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-  
-  button {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.5rem;
-    background-color: #ff66a6;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .hidden {
-    display: none;
-  }
-  /* Style for checkboxes */
-  input[type="radio"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    background-color: white;
-    position: relative;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-  }
-
-  input[type="radio"]:checked {
-    background-color: #ff66a6; /* Light gem-like color */
-    border-color: #ff66a6;
-  }
-
-  input[type="radio"]:checked::before {
-    content: '';
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: white;
-  }
-
-  input[type="radio"]:hover {
-    border-color: #ff66a6;
-  }
-
-  /* Add a subtle gem shadow effect */
-  input[type="radio"]:checked::before {
-    box-shadow: 0 0 5px 2px rgba(255, 102, 166, 0.5); /* Gem-like glow */
-  }
-  /* General Body and Background */
-body {
-  background-color: #F4F7F8; /* Light neutral background */
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdf5f8;
   color: #333;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
-/* Gemstone colors applied to specific sections */
-.dreamweaver {
-  background-color: #A8C9D6; /* Moonstone color */
+.quiz-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.radiant-witch {
-  background-color: #F4A7C7; /* Opal color */
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #ff66a6;
+  color: white;
+  cursor: pointer;
 }
 
-.silent-oracle {
-  background-color: #9B59B6; /* Amethyst color */
+.hidden {
+  display: none;
 }
 
-.star-empress {
-  background-color: #0069A2; /* Sapphire color */
-}
-
-.rogue-inventor {
-  background-color: #2ECC71; /* Emerald color */
-}
-
-.chaos-rider {
-  background-color: #E74C3C; /* Ruby color */
-}
-
-.forest-fairy {
-  background-color: #2ECC71; /* Emerald color */
-}
-
-.party-siren {
-  background-color: #E74C3C; /* Ruby color */
-}
-
-.ice-strategist {
-  background-color: #FFFFFF; /* Diamond color */
-}
-
-.commander-queen {
-  background-color: #F39C12; /* Topaz color */
-}
-
-.library-phantom {
-  background-color: #1D4E89; /* Lapis Lazuli color */
-}
-
-.trickster-mage {
-  background-color: #F9A825; /* Citrine color */
-}
-
-.iron-guardian {
-  background-color: #4A4A4A; /* Hematite color */
-}
-
-.steel-captain {
-  background-color: #7F8C8D; /* Iron color */
-}
-
-.hearth-healer {
-  background-color: #F7B7B3; /* Rose Quartz color */
-}
-
-.crown-diplomat {
-  background-color: #00B16A; /* Jade color */
-}
-
-/* Style for checkboxes */
-input[type="radio"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ccc;
-  border-radius: 5px; /* Rounded square style */
-  background-color: white;
-  position: relative;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-input[type="radio"]:checked {
-  background-color: #ff66a6; /* Light gem-like color */
-  border-color: #ff66a6;
-}
-
-input[type="radio"]:checked::before {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: white;
-}
-
-input[type="radio"]:hover {
-  border-color: #ff66a6;
-}
-
-/* Gem-inspired hover effect */
-input[type="radio"]:checked::before {
-  box-shadow: 0 0 5px 2px rgba(255, 102, 166, 0.5); /* Gem-like glow */
-}
