@@ -1,1 +1,1 @@
-# thegemwithin
+# The Gem Within You 💎
