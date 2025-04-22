@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #fdf5f8;
+  background: #F5F5DC;
   color: #333;
   margin: 0;
   padding: 2rem;
@@ -11,9 +11,9 @@ body {
 }
 
 .quiz-container {
-  background: white;
+  background: #A6D6D6;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   max-width: 500px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -49,6 +49,7 @@ input[type="radio"] {
 input[type="radio"]:checked {
   background-color: #ff66a6; /* Light gem-like color */
   border-color: #ff66a6;
+  width: 20px;
 }
 
 input[type="radio"]:checked::before {
@@ -173,7 +174,7 @@ background-color: white;
 }
 
 input[type="radio"]:hover {
-border-color: #ff66a6;
+border-color: #F4F8D3;
 }
 
 /* Gem-inspired hover effect */
