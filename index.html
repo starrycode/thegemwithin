@@ -82,3 +82,51 @@
       display: block;
       margin-top: 20px;
     }
+    #next-btn:hover {
+      background-color: #4a2eb0;
+    }
+    #next-btn:disabled {
+      background-color: #a4a4a4;
+      cursor: not-allowed;
+    }
+    #result-container {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The Gem Within</h1>
+  <div id="question-container" class="question-container"></div>
+  <button id="next-btn" disabled>Next</button>
+  <div id="result-container"></div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // Debugging: Check if JS is loaded correctly
+    console.log("The Gem Within quiz page loaded successfully!");
+
+    // Ensure the button becomes active after selecting an option
+    const nextButton = document.getElementById("next-btn");
+    nextButton.addEventListener('click', function() {
+      alert("Next button clicked! Check if you're navigating correctly.");
+    });
+
+    // Check if question container is loaded correctly
+    const questionContainer = document.getElementById("question-container");
+    if (questionContainer) {
+      console.log("Question container is ready!");
+    } else {
+      console.error("Question container not found!");
+    }
+  </script>
+</body>
+</html>
+
