@@ -34,6 +34,7 @@ button {
 }
 /* Style for checkboxes */
 input[type="radio"] {
+  text-align: center;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -52,7 +53,8 @@ input[type="radio"]:checked {
   width: 20px;
 }
 
-input[type="radio"]:checked::before {
+/* input[type="radio"]:checked::before {
+  box-shadow: 0 0 5px 2px rgba(255, 102, 166, 0.5);
   content: '';
   position: absolute;
   top: 3px;
@@ -61,16 +63,12 @@ input[type="radio"]:checked::before {
   height: 12px;
   border-radius: 50%;
   background-color: white;
-}
+} */
 
 input[type="radio"]:hover {
   border-color: #ff66a6;
 }
 
-/* Add a subtle gem shadow effect */
-input[type="radio"]:checked::before {
-  box-shadow: 0 0 5px 2px rgba(255, 102, 166, 0.5); /* Gem-like glow */
-}
 /* General Body and Background */
 body {
 background-color: #F4F7F8; /* Light neutral background */
