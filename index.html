@@ -77,6 +77,18 @@
       padding: 10px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
+    input[type="radio"]:checked::before {
+      text-align: center;
+      box-shadow: 0 0 5px 2px rgba(255, 102, 166, 0.5);
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: white;
+    }
     #next-btn {
       background-color: #5d3fd3;
       color: #fff;
