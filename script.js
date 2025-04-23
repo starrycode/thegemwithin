@@ -191,17 +191,17 @@ function showResult() {
   nextBtn.classList.add("hidden");
 }
 
-nextBtn.addEventListener("click", () => {
-  const selected = document.querySelector('input[name="option"]:checked');
-  if (!selected) return alert("Choose an option!");
-  scores[selected.value]++;
-  current++;
-  if (current < questions.length) {
-    showQuestion();
-  } else {
-    showResult();
-  }
-});
+// nextBtn.addEventListener("click", () => {
+//   const selected = document.querySelector('input[name="option"]:checked');
+//   if (!selected) return alert("Choose an option!");
+//   scores[selected.value]++;
+//   current++;
+//   if (current < questions.length) {
+//     showQuestion();
+//   } else {
+//     showResult();
+//   }
+// });
 
 showQuestion();
 
