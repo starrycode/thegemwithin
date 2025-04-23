@@ -79,148 +79,148 @@ const questions = [
   }
 ];
 
-// Store the user's responses
-let userResponses = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+// // Store the user's responses
+// let userResponses = { I: 0, E: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
-// Function to display a question and options
-function displayQuestion(questionIndex) {
-  const questionData = questions[questionIndex];
-  let questionHTML = `<h3>${questionData.question}</h3>`;
+// // Function to display a question and options
+// function displayQuestion(questionIndex) {
+//   const questionData = questions[questionIndex];
+//   let questionHTML = `<h3>${questionData.question}</h3>`;
   
-  questionData.options.forEach((option, index) => {
-    questionHTML += `
-      <div class="option">
-        <input type="radio" name="question${questionIndex}" id="option${questionIndex}_${index}" value="${option.type}" onclick="trackAnswer('${option.type}')">
-        <label for="option${questionIndex}_${index}">${option.text}</label>
-      </div>
-    `;
-  });
-
-  document.getElementById('question-container').innerHTML = questionHTML;
-}
-
-// Function to track answers
-function trackAnswer(type) {
-  userResponses[type]++;
-}
-
-// Function to calculate and display results
-function showResults() {
-  let result = "";
-  const sortedResponses = Object.entries(userResponses).sort((a, b) => b[1] - a[1]);
-
-  sortedResponses.forEach(([type, score]) => {
-    result += `<p>${type}: ${score}</p>`;
-  });
-
-  document.getElementById('result-container').innerHTML = result;
-}
-
-// Start the quiz by showing the first question
-let currentQuestion = 0;
-function nextQuestion() {
-  if (currentQuestion < questions.length) {
-    displayQuestion(currentQuestion);
-    currentQuestion++;
-  } else {
-    showResults();
-  }
-}
-
-// Add a "Next" button that will call the next question function
-document.getElementById('next-btn').addEventListener('click', nextQuestion);
-
-// Initial call to start the quiz
-nextQuestion();
-
-
-// // Render the first question
-// let currentQuestionIndex = 0;
-// const questionContainer = document.getElementById("question-container");
-// const nextButton = document.getElementById("next-btn");
-
-// function renderQuestion() {
-//   const question = questions[currentQuestionIndex];
-//   questionContainer.innerHTML = `
-//     <h2>${question.question}</h2>
-//     ${question.options.map((option, index) => `
+//   questionData.options.forEach((option, index) => {
+//     questionHTML += `
 //       <div class="option">
-//         <input type="radio" id="option${index}" name="question${currentQuestionIndex}" value="${option.type}">
-//         <label for="option${index}">${option.text}</label>
+//         <input type="radio" name="question${questionIndex}" id="option${questionIndex}_${index}" value="${option.type}" onclick="trackAnswer('${option.type}')">
+//         <label for="option${questionIndex}_${index}">${option.text}</label>
 //       </div>
-//     `).join('')}
-//   `;
-
-//   // Disable the "Next" button initially
-//   nextButton.disabled = true;
-
-//   // Enable the "Next" button when a choice is made
-//   const radioButtons = questionContainer.querySelectorAll('input[type="radio"]');
-//   radioButtons.forEach(radio => {
-//     radio.addEventListener('change', () => {
-//       nextButton.disabled = false;
-//     });
+//     `;
 //   });
+
+//   document.getElementById('question-container').innerHTML = questionHTML;
 // }
 
-// // Load the first question
-// renderQuestion();
-
-// let current = 0;
-// let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
-
-// const quizDiv = document.getElementById("quiz");
-// const nextBtn = document.getElementById("next-btn");
-// const resultDiv = document.getElementById("result");
-
-// function showQuestion() {
-//   const q = questions[current];
-//   quizDiv.innerHTML = `<p>${q.question}</p>` + q.options.map((o, i) =>
-//     `<label><input type="radio" name="option" value="${o.type}"> ${o.text}</label><br/>`
-//   ).join('');
+// // Function to track answers
+// function trackAnswer(type) {
+//   userResponses[type]++;
 // }
 
+// // Function to calculate and display results
 // function showResults() {
-//   const type = (scores.E >= scores.I ? "E" : "I") +
-//                (scores.S >= scores.N ? "S" : "N") +
-//                (scores.T >= scores.F ? "T" : "F") +
-//                (scores.J >= scores.P ? "J" : "P");
-//   resultDiv.classList.remove("hidden");
-//   resultDiv.innerHTML = `<h2>Your MBTI type is ${type}!</h2><p>Now meet your inner princess...</p>`;
-//   quizDiv.classList.add("hidden");
-//   nextBtn.classList.add("hidden");
+//   let result = "";
+//   const sortedResponses = Object.entries(userResponses).sort((a, b) => b[1] - a[1]);
+
+//   sortedResponses.forEach(([type, score]) => {
+//     result += `<p>${type}: ${score}</p>`;
+//   });
+
+//   document.getElementById('result-container').innerHTML = result;
 // }
 
-// // nextBtn.addEventListener("click", () => {
-// //   const selected = document.querySelector('input[name="option"]:checked');
-// //   if (!selected) return alert("Choose an option!");
-// //   scores[selected.value]++;
-// //   current++;
-// //   if (current < questions.length) {
-// //     showQuestion();
-// //   } else {
-// //     showResult();
-// //   }
-// // });
-
-// showQuestion();
-
-
-
-// // Handle the "Next" button click
-// nextButton.addEventListener('click', () => {
-//   currentQuestionIndex++;
-//   if (currentQuestionIndex < questions.length) {
-//     renderQuestion();
+// // Start the quiz by showing the first question
+// let currentQuestion = 0;
+// function nextQuestion() {
+//   if (currentQuestion < questions.length) {
+//     displayQuestion(currentQuestion);
+//     currentQuestion++;
 //   } else {
 //     showResults();
 //   }
+// }
+
+// // Add a "Next" button that will call the next question function
+// document.getElementById('next-btn').addEventListener('click', nextQuestion);
+
+// // Initial call to start the quiz
+// nextQuestion();
+
+
+// Render the first question
+let currentQuestionIndex = 0;
+const questionContainer = document.getElementById("question-container");
+const nextButton = document.getElementById("next-btn");
+
+function renderQuestion() {
+  const question = questions[currentQuestionIndex];
+  questionContainer.innerHTML = `
+    <h2>${question.question}</h2>
+    ${question.options.map((option, index) => `
+      <div class="option">
+        <input type="radio" id="option${index}" name="question${currentQuestionIndex}" value="${option.type}">
+        <label for="option${index}">${option.text}</label>
+      </div>
+    `).join('')}
+  `;
+
+  // Disable the "Next" button initially
+  nextButton.disabled = true;
+
+  // Enable the "Next" button when a choice is made
+  const radioButtons = questionContainer.querySelectorAll('input[type="radio"]');
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', () => {
+      nextButton.disabled = false;
+    });
+  });
+}
+
+// Load the first question
+renderQuestion();
+
+let current = 0;
+let scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
+
+const quizDiv = document.getElementById("quiz");
+const nextBtn = document.getElementById("next-btn");
+const resultDiv = document.getElementById("result");
+
+function showQuestion() {
+  const q = questions[current];
+  quizDiv.innerHTML = `<p>${q.question}</p>` + q.options.map((o, i) =>
+    `<label><input type="radio" name="option" value="${o.type}"> ${o.text}</label><br/>`
+  ).join('');
+}
+
+function showResults() {
+  const type = (scores.E >= scores.I ? "E" : "I") +
+               (scores.S >= scores.N ? "S" : "N") +
+               (scores.T >= scores.F ? "T" : "F") +
+               (scores.J >= scores.P ? "J" : "P");
+  resultDiv.classList.remove("hidden");
+  resultDiv.innerHTML = `<h2>Your MBTI type is ${type}!</h2><p>Now meet your inner princess...</p>`;
+  quizDiv.classList.add("hidden");
+  nextBtn.classList.add("hidden");
+}
+
+// nextBtn.addEventListener("click", () => {
+//   const selected = document.querySelector('input[name="option"]:checked');
+//   if (!selected) return alert("Choose an option!");
+//   scores[selected.value]++;
+//   current++;
+//   if (current < questions.length) {
+//     showQuestion();
+//   } else {
+//     showResult();
+//   }
 // });
 
-// // // Show the results after all questions
-// // function showResults() {
-// //   questionContainer.innerHTML = "<h2>Results</h2>";
-// //   // Display the result logic here
-// //   // For now, you can display a placeholder message
-// //   questionContainer.innerHTML += "<p>Your results will appear here!</p>";
-// // }
+showQuestion();
+
+
+
+// Handle the "Next" button click
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex++;
+  if (currentQuestionIndex < questions.length) {
+    renderQuestion();
+  } else {
+    showResults();
+  }
+});
+
+// // Show the results after all questions
+// function showResults() {
+//   questionContainer.innerHTML = "<h2>Results</h2>";
+//   // Display the result logic here
+//   // For now, you can display a placeholder message
+//   questionContainer.innerHTML += "<p>Your results will appear here!</p>";
+// }
