@@ -1,9 +1,4 @@
-
- 
-
-
-
-   // Define the questions and answers with corresponding MBTI types
+// Define the questions and answers with corresponding MBTI types
 const questions = [
   {
     question: "Your perfect gemstone is glowing in the dark. What do you do?",
@@ -193,7 +188,7 @@ function showResults() {
 }
 
 nextBtn.addEventListener("click", () => {
-  const selected = document.querySelector('input[name="option"]:checked');
+  const selected = document.querySelector(`input[name="question${current}"]:checked`);
   if (!selected) return alert("Choose an option!");
   scores[selected.value]++;
   current++;
