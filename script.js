@@ -187,15 +187,21 @@ function showResults() {
   nextBtn.classList.add("hidden");
 }
 
+// Call showQuestion() initially to load the first question
+showQuestion();
+
 nextBtn.addEventListener("click", () => {
   const selected = document.querySelector('input[name="option"]:checked');
-  if (!selected) return alert("Choose an option!");
-  scores[selected.value]++;
+  if (!selected) {
+    alert("Choose an option!");
+    return;
+  }
+  scores[selected.value]++; // Increment the score for the selected type
   current++;
   if (current < questions.length) {
-    showQuestion();
+    showQuestion(); // Load the next question
   } else {
-    showResults();
+    showResults(); // Show results after the last question
   }
 });
 
