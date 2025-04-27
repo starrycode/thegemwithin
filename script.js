@@ -1,9 +1,4 @@
-
- 
-
-
-
-   // Define the questions and answers with corresponding MBTI types
+// Define the questions and answers with corresponding MBTI types
 const questions = [
   {
     question: "Your perfect gemstone is glowing in the dark. What do you do?",
@@ -200,7 +195,7 @@ nextBtn.addEventListener("click", () => {
   if (current < questions.length) {
     showQuestion();
   } else {
-    showResult();
+    showResults();
   }
 });
 
