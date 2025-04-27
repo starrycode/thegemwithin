@@ -171,7 +171,7 @@ const resultDiv = document.getElementById("result");
 
 function showQuestion() {
   const q = questions[current];
-  quizDiv.innerHTML = `<p>${q.question}</p>` + q.options.map((o, i) =>
+  questionContainer.innerHTML = `<p>${q.question}</p>` + q.options.map((o, i) =>
     `<label><input type="radio" name="option" value="${o.type}"> ${o.text}</label><br/>`
   ).join('');
 }
