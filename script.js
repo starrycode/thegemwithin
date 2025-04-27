@@ -158,6 +158,7 @@ function renderQuestion() {
   const radioButtons = questionContainer.querySelectorAll('input[type="radio"]');
   radioButtons.forEach(radio => {
     radio.addEventListener('change', () => {
+      console.log("Clicked");
       nextButton.disabled = false;
     });
   });
@@ -191,31 +192,31 @@ function showResults() {
   nextBtn.classList.add("hidden");
 }
 
-// nextBtn.addEventListener("click", () => {
-//   const selected = document.querySelector('input[name="option"]:checked');
-//   if (!selected) return alert("Choose an option!");
-//   scores[selected.value]++;
-//   current++;
-//   if (current < questions.length) {
-//     showQuestion();
-//   } else {
-//     showResult();
-//   }
-// });
-
-showQuestion();
-
-
-
-// Handle the "Next" button click
-nextButton.addEventListener('click', () => {
-  currentQuestionIndex++;
-  if (currentQuestionIndex < questions.length) {
-    renderQuestion();
+nextBtn.addEventListener("click", () => {
+  const selected = document.querySelector('input[name="option"]:checked');
+  if (!selected) return alert("Choose an option!");
+  scores[selected.value]++;
+  current++;
+  if (current < questions.length) {
+    showQuestion();
   } else {
-    showResults();
+    showResult();
   }
 });
+
+// showQuestion();
+
+
+
+// // Handle the "Next" button click
+// nextButton.addEventListener('click', () => {
+//   currentQuestionIndex++;
+//   if (currentQuestionIndex < questions.length) {
+//     renderQuestion();
+//   } else {
+//     showResults();
+//   }
+// });
 
 // // Show the results after all questions
 // function showResults() {
