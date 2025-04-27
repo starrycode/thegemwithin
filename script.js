@@ -1,4 +1,9 @@
-// Define the questions and answers with corresponding MBTI types
+
+ 
+
+
+
+   // Define the questions and answers with corresponding MBTI types
 const questions = [
   {
     question: "Your perfect gemstone is glowing in the dark. What do you do?",
@@ -171,7 +176,7 @@ const resultDiv = document.getElementById("result");
 
 function showQuestion() {
   const q = questions[current];
-  questionContainer.innerHTML = `<p>${q.question}</p>` + q.options.map((o, i) =>
+  quizDiv.innerHTML = `<p>${q.question}</p>` + q.options.map((o, i) =>
     `<label><input type="radio" name="option" value="${o.type}"> ${o.text}</label><br/>`
   ).join('');
 }
@@ -187,19 +192,13 @@ function showResults() {
   nextBtn.classList.add("hidden");
 }
 
-// Call showQuestion() initially to load the first question
-showQuestion();
-
 nextBtn.addEventListener("click", () => {
   const selected = document.querySelector('input[name="option"]:checked');
-  if (!selected) {
-    alert("Choose an option!");
-    return;
-  }
-  scores[selected.value]++; // Increment the score for the selected type
+  if (!selected) return alert("Choose an option!");
+  scores[selected.value]++;
   current++;
   if (current < questions.length) {
-    showQuestion(); // Load the next question
+    showQuestion();
   } else {
     showResults(); // Show results after the last question
   }

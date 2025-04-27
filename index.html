@@ -1,3 +1,22 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Gem Within 💎</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>👑 Which Gem is within you?</h1>
+    <div id="quiz"></div>
+    <button id="next-btn">Next</button>
+    <div id="result" class="hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,9 +125,28 @@
   <h1>The Gem Within 💎</h1>
   <div id="question-container" class="question-container"></div>
   <button id="next-btn" disabled>Next</button>
-  <div id="result" class="hidden"></div> <!-- Ensure this exists for results -->
+  <!-- <div id="result-container"></div> -->
 
   <script src="script.js"></script>
+
+  <script>
+    // Debugging: Check if JS is loaded correctly
+    console.log("The Gem Within quiz page loaded successfully!");
+
+    // Ensure the button becomes active after selecting an option
+    const nextButton = document.getElementById("next-btn");
+    nextButton.addEventListener('click', function() {
+      alert("Next button clicked! Check if you're navigating correctly.");
+    });
+
+    // Check if question container is loaded correctly
+    const questionContainer = document.getElementById("question-container");
+    if (questionContainer) {
+      console.log("Question container is ready!");
+    } else {
+      console.error("Question container not found!");
+    }
+  </script>
 </body>
 </html>
 
